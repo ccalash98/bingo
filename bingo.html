@@ -1,37 +1,42 @@
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
-    <!-- Basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Mobile metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Site metas -->
     <title>Cable Tacna</title>
     <meta name="keywords" content="">
     <meta name="description" content="Cable Tacna - Internet + Tv 100% Fibra Optica...">
     <meta name="author" content="Cristtofher Ccalash">
-    <!-- Bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Style css -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Responsive-->
     <link rel="stylesheet" href="css/responsive.css">
-    <!-- Fevicon -->
-    <link rel="icon" href="image/fevicon.png" type="image/gif" />
+    <link rel="icon" href="image/fevicon.png" type="image/gif" />  
     <link rel="icon" href="./image/logo_mini.png" sizes="32x32" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Font Family -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-</head>
+    <style>
+        .custom-left-image, .custom-right-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px; /* Espaciado alrededor de las imágenes */
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto; /* Asegura que las imágenes sean responsivas */
+        }
+
+        .numbersTable {
+            margin-top: 20px; /* Espaciado superior para la tabla */
+        }
+    </style>
+</head>      
 
 <body class="main-layout">
-    <!-- Loader -->
     <div class="loader_bg">
-        <div class="loader">
-            <!-- Cargando... -->
-        </div>
+        <div class="loader"></div>
     </div>
 
     <header>
@@ -61,56 +66,57 @@
             </div>
         </div>
     </header>
-
-    <!-- Contenedor principal -->
+    
     <div class="container">
         <div class="row mt-5">
             <!-- Imagen lateral izquierda -->
-            <div class="col-md-2 text-center custom-left-image">
+            <div class="col-md-2 custom-left-image">
                 <img src="image/dr3.png" alt="Imagen izquierda" class="img-fluid">
             </div>            
 
             <!-- Tabla de bingo en el centro -->
-            <div class="col-md-8">
+            <div class="col-md-8 mx-auto">
                 <div class="bigNumberDisplay text-center mb-4">
-                    <span id="displayNumber" style="font-size: 2rem;">0</span>
-                </div>                
+                    <span id="displayNumber" style="font-size: 3rem; font-weight: bold;">0</span>
+                </div>
                 <div class="text-center mb-4">
-                    <input id="btnGenerate" type="button" value="Generar" class="btn btn-primary"/>
-                    <input id="btnRefresh" type="button" value="Refrescar" class="btn btn-primary"/>
-                </div>                
+                    <input id="btnGenerate" type="button" value="Generar" class="btn btn-success mx-2"/>
+                    <input id="btnRefresh" type="button" value="Refrescar" class="btn btn-danger mx-2"/>
+                </div>
                 <div class="numbersTable">
                     <table class="table table-bordered text-center">
-                        <tr>
-                            <td></td><td></td><td></td><td></td><td></td>
-                        </tr>
-                        <tr>
-                            <td></td><td></td><td></td><td></td><td></td>
-                        </tr>
-                        <tr>
-                            <td></td><td></td>
-                            <td id="middle"><img src="./image/logo_mini.png" alt="Logo" class="logo-img" /></td>
-                            <td></td><td></td>
-                        </tr>
-                        <tr>
-                            <td></td><td></td><td></td><td></td><td></td>
-                        </tr>
-                        <tr>
-                            <td></td><td></td><td></td><td></td><td></td>
-                        </tr>
-                    </table>
+                        <tbody>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td> 
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td>
+                                <td id="middle" style="position: relative;">
+                                    <img src="./image/logo_mini.png" alt="Logo" class="logo-img" style="max-width: 50%;"/>
+                                </td>
+                                <td></td><td></td>
+                            </tr>
+                            <tr>  
+                                <td></td><td></td><td></td><td></td><td></td>   
+                            </tr>
+                            <tr>  
+                                <td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                        </tbody>  
+                    </table>    
                 </div>
-            </div>
+            </div>  
 
             <!-- Imagen lateral derecha -->
-            <div class="col-md-2 text-center">
+            <div class="col-md-2 custom-right-image">
                 <img src="image/dr2.png" alt="Imagen derecha" class="img-fluid">
             </div>
         </div>
     </div>
 
-
-    <!-- Incluir jQuery y los scripts en el orden correcto -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/bingo.js"></script>
