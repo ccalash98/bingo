@@ -135,10 +135,11 @@ ol {
 }
 
 p {
-     margin: 0px;
+     margin: 0px; 
      font-weight: 500;
-     font-size: 15px;
+     font-size: 18px;
      line-height: 24px;
+     font-weight: bold; /* Hacer el texto más grueso */
 }
 
 a {
@@ -2297,4 +2298,7 @@ ul.img_icon li {
      padding-left: 0;  /* Quitar el padding izquierdo */
      margin-left: -0;   /* Quitar el margen izquierdo */
  } 
+ 
+
+
  

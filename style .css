@@ -1,0 +1,151 @@
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            gap: 20px; 
+            padding: 20px;  
+            margin: 0;
+        }  
+        h1 {
+            font-size: 36px;
+            color: #9bc444;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h2, h4 { 
+            margin: 0;
+            font-size: 31px;   
+            margin-top: 12px;
+            border: 3px dashed #9bc444;
+            padding: 10px;  
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-top: 12px;
+            background-color: #9bc444;
+        }
+        h2 {
+            color: #ffffff
+        }
+        h4 {  
+            color: #ffffff
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #9bc444;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .contenedor-bingos {
+            display: flex;
+            flex-wrap: wrap;  
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .tarjeta {
+            flex: 1 1 300px;  
+            max-width: 300px;
+            border: 2px solid #1c84c3;
+            border-radius: 10px;  
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;  
+            padding: 30px;
+            overflow: hidden; 
+            margin: 10px;
+        }  
+        .grid {  
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .numero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;    
+            border: 2px solid #0d74b5;
+            border-radius: 10px;
+            font-size: 24px; 
+            font-weight: bold; 
+            background-color: #ffffff;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            margin: auto;
+        }
+        .numero:hover {
+            background-color: #d0f0c0;
+            transform: scale(1.05);
+        }
+        .free {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            font-weight: bold;
+            color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            width: 60px;
+            height: 60px;
+            margin: auto;
+        }
+        .imagenes-publicitarias {
+            display: flex; 
+            justify-content: center;
+            margin-top: 10px;  
+        }    
+        .imagenes-publicitarias img {
+            width: 90px; /* Ajusta el tamaño según sea necesario */
+            margin: 5px;  
+            height: 90px; /* Mantiene la relación de aspecto */
+        }
+        /* Responsividad */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 28px; 
+            }
+            button {
+                font-size: 14px; 
+            }
+        }
+        @media (max-width: 768px) {
+            .tarjeta {
+                flex: 1 1 100%; 
+                max-width: none; 
+            }
+            .numero {
+                width: 40px; 
+                height: 40px;
+                font-size: 24px; 
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px; 
+            }
+            button {
+                width: 100%; 
+            }
+            .numero {
+                width: 35px;     
+                height: 35px;
+                font-size: 20px; 
+            }
+        }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cable Tacna</title>
     <meta name="keywords" content="">
-    <meta name="description" content="Cable Tacna - Internet + Tv 100% Fibra Optica...">
+    <meta name="description" content="Cable Tacna - Internet + TV 100% Fibra Óptica...">
     <meta name="author" content="Cristtofher Ccalash">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -16,28 +16,97 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
-        .custom-left-image, .custom-right-image {
+        .custom-image {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px; /* Espaciado alrededor de las imágenes */
+            padding: 20px;  
+            max-width: 100%;
+            flex: 1;  
         }
 
-        .img-fluid {
-            height: auto; /* Asegura que las imágenes sean responsivas */
-            transform: scale(2);
+        .img-fluid {    
+            height: 100%;
+            max-width: 100%;
+            border-radius: 20px;
+            border: solid 2px #8fd400; 
         }
 
         .numbersTable {
-            margin-top: 20px; /* Espaciado superior para la tabla */
+            margin-top: 20px; 
+        }
+ 
+        .bigNumberDisplay {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+        }
+ 
+        .table-container {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100%; 
+            position: relative; 
+        }
+
+        .table {
+            width: 400px; 
+            height: 400px; 
+            border: 2px solid #8fd400; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            position: relative; 
+            z-index: 1; 
+        }
+
+        .table th {
+            background-color: #f8f9fa; 
+            color: #333; 
+            font-weight: bold; 
+            padding: 15px; 
+        }
+
+        .table td {
+            background-color: #fff; 
+            color: #555; 
+            padding: 0; 
+            width: 20%; 
+            height: 20%; 
+            transition: background-color 0.3s; 
+        }
+
+        .table td:hover {
+            background-color: #e9ecef; 
+        }
+
+        .image-wrapper {
+            position: absolute; 
+            top: 43%;  /* Ajusta esta propiedad para subir las imágenes */
+            transform: translateY(-50%); 
+            width: 400px; 
+            z-index: 0; 
+        }
+
+        .image-wrapper.left {
+            left: -300px; /* Acercar a la tabla */
+        }
+
+        .image-wrapper.right {
+            right: -300px; /* Acercar a la tabla */
         }
     </style>
-</head>                
+</head> 
 
 <body class="main-layout">
     <div class="loader_bg">
         <div class="loader"></div>
-    </div>
+    </div>  
 
     <header>
         <div class="header">
@@ -62,80 +131,72 @@
                     <a class="navbar-brand" href="#">
                         <img src="image/logopromo.png" alt="Logo" class="logo-img" />
                     </a>
-                </nav>
+                </nav>  
             </div>
-        </div>
+        </div>  
     </header>
-    
+        
     <div class="container">
         <div class="row mt-5">
-            <!-- Tabla de bingo en el centro -->
-            <div class="col-md-8 mx-auto">
-                <div class="bigNumberDisplay text-center mb-4">
-                    <span id="displayNumber" style="font-size: 3rem; font-weight: bold;">0</span>
-                </div>
+            <div class="col-md-12 mx-auto">
+                <div class="bigNumberDisplay text-center mb-4" id="displayNumber">0</div>
                 <div class="text-center mb-4">
-                    <input id="btnGenerate" type="button" value="Generar" class="btn btn-success mx-2"/>
-                    <input id="btnRefresh" type="button" value="Refrescar" class="btn btn-danger mx-2"/>
-                </div>
+                    <input id="btnGenerate" type="button" value="Generar" class="btn btn-success mx-2" onclick="generateNumber()"/>
+                    <input id="btnRefresh" type="button" value="Refrescar" class="btn btn-danger mx-2" onclick="refreshNumber()"/>
+                </div>  
+                <p>CㅤㅤㅤㅤAㅤㅤㅤㅤBㅤㅤㅤㅤLㅤㅤㅤㅤE</p>  
                 <div class="numbersTable">
-                    <table class="table table-bordered text-center">
-                        <tbody>
-                            <tr>
-                                <td></td><td></td><td></td><td></td><td></td> 
-                            </tr>
-                            <tr>
-                                <td></td><td></td><td></td><td></td><td></td>
-                            </tr>
-                            <tr>
-                                <td></td><td></td>
-                                <td id="middle" style="position: relative;">
-                                    <img src="./image/logo_mini.png" alt="Logo" class="logo-img" style="max-width: 50%;"/>
-                                </td>
-                                <td></td><td></td>
-                            </tr>
-                            <tr>  
-                                <td></td><td></td><td></td><td></td><td></td>   
-                            </tr>
-                            <tr>  
-                                <td></td><td></td><td></td><td></td><td></td>
-                            </tr>
-                        </tbody>  
-                    </table>    
-                </div>
+                    <div class="table-container">
+                        <div class="image-wrapper left">
+                            <img src="image/dr3.png" alt="Publicidad izquierda" class="img-fluid">
+                        </div>
+                        <div class="image-wrapper right">
+                            <img src="image/dr2.png" alt="Publicidad derecha" class="img-fluid">
+                        </div>
+                        <table class="table table-bordered text-center">
+                            <tbody>
+                                <tr>
+                                    <td></td><td></td><td></td><td></td><td></td> 
+                                </tr>
+                                <tr>
+                                    <td></td><td></td><td></td><td></td><td></td>
+                                </tr>
+                                <tr>
+                                    <td></td><td></td>
+                                    <td id="middle" style="position: relative;">
+                                        <img src="./image/logo_mini.png" alt="Logo" class="logo-img" style="max-width: 100%;"/>
+                                    </td>
+                                    <td></td><td></td>
+                                </tr> 
+                                <tr>  
+                                    <td></td><td></td><td></td><td></td><td></td>   
+                                </tr>
+                                <tr>  
+                                    <td></td><td></td><td></td><td></td><td></td>     
+                                </tr>
+                            </tbody>    
+                        </table>
+                    </div> 
+                    <p>TㅤㅤㅤㅤAㅤㅤㅤㅤCㅤㅤㅤㅤNㅤㅤㅤㅤA</p>  
+                </div>  
             </div>    
-        </div>
-    </div>
+        </div>    
+    </div>  
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/bingo.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <script>
+        function generateNumber() {
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('displayNumber').textContent = randomNumber;
+        }
 
-<table>
-<tr>
-    <td>
-        <p>
-            <!-- Imagen lateral izquierda -->
-            <div class="col-md-2 custom-left-image" class="img-fluid" style="margin-left: 200px; margin-top: -450px; ">
-                <img src="image/dr3.png" alt="Imagen izquierda" class="img-fluid">
-            </div> 
-        </p>
-    </td>
-    <td>
-        <p>
-            &nbsp;
-        </p>
-    </td>
-    <td>
-        <p>
-            <!-- Imagen lateral derecha -->
-            <div class="col-md-2 custom-right-image">
-                <img src="image/dr2.png" alt="Imagen derecha" class="img-fluid" style="margin-right: -500px; margin-top: -500px; ">
-            </div> 
-        </p>
-    </td>
-</tr>
-</table>
+        function refreshNumber() {
+            document.getElementById('displayNumber').textContent = '0';
+        }
+    </script>
+</body>
 </html>
