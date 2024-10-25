@@ -24,15 +24,15 @@
         }
 
         .img-fluid {
-            max-width: 100%;
             height: auto; /* Asegura que las imágenes sean responsivas */
+            transform: scale(2);
         }
 
         .numbersTable {
             margin-top: 20px; /* Espaciado superior para la tabla */
         }
     </style>
-</head>      
+</head>                
 
 <body class="main-layout">
     <div class="loader_bg">
@@ -69,11 +69,6 @@
     
     <div class="container">
         <div class="row mt-5">
-            <!-- Imagen lateral izquierda -->
-            <div class="col-md-2 custom-left-image">
-                <img src="image/dr3.png" alt="Imagen izquierda" class="img-fluid">
-            </div>            
-
             <!-- Tabla de bingo en el centro -->
             <div class="col-md-8 mx-auto">
                 <div class="bigNumberDisplay text-center mb-4">
@@ -108,12 +103,7 @@
                         </tbody>  
                     </table>    
                 </div>
-            </div>  
-
-            <!-- Imagen lateral derecha -->
-            <div class="col-md-2 custom-right-image">
-                <img src="image/dr2.png" alt="Imagen derecha" class="img-fluid">
-            </div>
+            </div>    
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -122,4 +112,30 @@
     <script src="js/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
+<table>
+<tr>
+    <td>
+        <p>
+            <!-- Imagen lateral izquierda -->
+            <div class="col-md-2 custom-left-image" class="img-fluid" style="margin-left: 200px; margin-top: -450px; ">
+                <img src="image/dr3.png" alt="Imagen izquierda" class="img-fluid">
+            </div> 
+        </p>
+    </td>
+    <td>
+        <p>
+            &nbsp;
+        </p>
+    </td>
+    <td>
+        <p>
+            <!-- Imagen lateral derecha -->
+            <div class="col-md-2 custom-right-image">
+                <img src="image/dr2.png" alt="Imagen derecha" class="img-fluid" style="margin-right: -500px; margin-top: -500px; ">
+            </div> 
+        </p>
+    </td>
+</tr>
+</table>
 </html>
