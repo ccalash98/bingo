@@ -1,40 +1,47 @@
 $(function () {
     var bingo = {
-        selectedNumbers: [],
+        selectedNumbers: new Set(),
         generateRandom: function () {
             var min = 1;
-            var max = 75; // Usamos números del 1 al 75
+            var max = 90;
             return Math.floor(Math.random() * (max - min + 1)) + min;
         },
         generateNextRandom: function () {
-            if (bingo.selectedNumbers.length >= 24) {
+            if (bingo.selectedNumbers.size >= 90) {
                 alert("Todos los números han sido generados");
                 return 0;
             }
-            var random = bingo.generateRandom();
-            while ($.inArray(random, bingo.selectedNumbers) > -1) {
+            var random;
+            do {
                 random = bingo.generateRandom();
-            }
-            bingo.selectedNumbers.push(random);
+            } while (bingo.selectedNumbers.has(random));
+            bingo.selectedNumbers.add(random);
             return random;
         }
     };
 
-    // Llenar las 24 celdas con números aleatorios del 1 al 75, excepto la celda del medio
-    var cells = $('td').not('#middle'); // Excluir la celda del medio
-    var index = 0;
+    var cells = $('td');
 
     $('#btnGenerate').click(function () {
-        if (index >= 24) {
+        if (bingo.selectedNumbers.size >= 90) {
             alert("Se han llenado todas las celdas.");
             return;
         }
 
-        var random = bingo.generateNextRandom().toString();
-        $(cells[index]).text(random);
-        $(cells[index]).addClass('selected');
-        index++;
-        // Actualizar el número mostrado en el span dentro de bigNumberDisplay
-        $('#displayNumber').text(random); 
+        var random = bingo.generateNextRandom();
+        
+        // Mostrar el número en la celda correspondiente a su valor
+        $(cells[random - 1]).text(random);
+        $(cells[random - 1]).addClass('selected');
+
+        // Actualizar el número en el elemento displayNumber
+        $('#displayNumber').text(random);
+    });
+
+    $('#btnRefresh').click(function () {
+        $('#displayNumber').text("0");
+        bingo.selectedNumbers.clear();
+        cells.text("");
+        cells.removeClass('selected');
     });
 });
